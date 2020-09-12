@@ -13,6 +13,18 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import django_heroku
 
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+# Using env variables in your code
+#
+# env("ENV_VARIABLE")
+#
+# env("ENV_VARIABLE", default="my default value")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +88,23 @@ WSGI_APPLICATION = 'p4backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'test',
+
+        'USER': 'test',
+
+        'PASSWORD': 'test',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
