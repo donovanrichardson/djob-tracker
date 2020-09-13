@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'apps.authentication'
 ]
 
 MIDDLEWARE = [
@@ -89,23 +90,10 @@ WSGI_APPLICATION = 'p4backend.wsgi.application'
 
 DATABASES = {
 
-    'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'test',
-
-        'USER': 'test',
-
-        'PASSWORD': 'test',
-
-        'HOST': 'localhost',
-
-        'PORT': '5432',
-
-    }
+    'default': env.db()
 
 }
+
 
 
 # Password validation
@@ -125,6 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'authentication.User'
 
 
 # Internationalization
@@ -147,3 +137,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
