@@ -17,7 +17,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         model = User
         # List all of the fields that could possibly be included in a request
         # or response
-        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'token')
+        fields = ('username', 'email', 'password', 'token')
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
