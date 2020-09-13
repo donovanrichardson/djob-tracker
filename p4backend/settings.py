@@ -114,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#https://stackoverflow.com/a/49189522/9608521
 AUTH_USER_MODEL = 'authentication.User'
 
 

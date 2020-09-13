@@ -21,7 +21,8 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             username = username,
-            email = self.normalize_email(email)
+            email = self.normalize_email(email),
+            is_staff=False,
         )
         user.set_password(password)
         user.save()
@@ -34,7 +35,7 @@ class UserManager(BaseUserManager):
 
         user = self.create_user(username, email, password)
         user.is_superuser = True
-
+        user.is_staff = True
         user.save()
 
         return user
@@ -43,6 +44,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(db_index=True, max_length=255, unique = True)
     email = models.EmailField(db_index=True, unique = True)
+    is_staff = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
