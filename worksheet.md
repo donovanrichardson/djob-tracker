@@ -13,22 +13,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Monday 14| Add user restrictions to backend | Incomplete
-|Monday 14| Start basic front end | Incomplete
-|Tuesday 15| Continue frontend, add Login | Incomplete
-|Wednesday 16| Continue frontend, CSS | Incomplete
-|Thursday 17| Add location filter and rating to front end | Incomplete
-|Friday 18| *Debugging* finish MVP | Incomplete
-|Weekend (19,20)| Add Indeed and Linkedin integration, auto gen of keywords| Incomplete
-|Monday 21| Add Sublocations, finish up | Incomplete
+|Friday 18| *Debugging* | Incomplete
+|Weekend (19,20)| Auto generation of keyword using text analysis | Incomplete
+|Monday 21| Add Sublocations to Location model | Incomplete
 
 ## Project Description
 
-A Job Tracker app that allows users to login, add jobs listings (including job title, description, URL, and location), and filter by location.
-
-## Wireframes
-
-[Mobile Wireframe(Figma)](https://www.figma.com/file/JP4h3Cicc3FhcUjmIFm7h5/R%C3%A9sumption?node-id=0%3A1)
-
+A Job Tracker app that allows users to login, add jobs listings (including job title, description, URL, and location), and filter by location. The backend handles CRUD, data validation, authorization, and in the post-MVP will auto-generate keywords.
 
 ## Time/Priority Matrix 
 
@@ -46,24 +37,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|Job Create Read Delete|H|2hr| -hr | -hr|
-|Update Job|H|1hr| -hr | -hr|
-|Filter Jobs by Location|M|2hr| -hr | -hr|
+|Add Job auth to Job and models|H|4hr| -hr | -hr|
+|Filter Jobs by Location (Backend)|M|1hr| -hr | -hr|
 |Rate Locations|M|1hr| -hr | -hr|
-|Locations and Jobs tied to user|H|4hr| -hr | -hr|
-| Front end Login | H | 2hr | -hr | -hr|
-| Front end Table | H | 3hr | -hr | -hr|
-| Front end CSS | H | 6hr | -hr | -hr|
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|Indeed and Linkedin Integration(frontend)|M|6hr| -hr | -hr|
-|Sublocations|L|4hr| -hr | -hr|
+|Sublocations|L|3hr| -hr | -hr|
 |Keyword generation based on documents|L|4hr| -hr | -hr|
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+If I do the auto-generated keyword part of the Post-MVP, I will find a library to do a text analysis on job descriptions.
 
 ## Code Snippet
 
