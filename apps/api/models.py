@@ -4,7 +4,7 @@ from django.db import models
 class Location(models.Model):
 
     name = models.CharField(max_length=255, primary_key=True)
-    rating = models.IntegerField()
+    rating = models.IntegerField(null=True)
 
 class Job(models.Model):
 
@@ -13,4 +13,5 @@ class Job(models.Model):
     description = models.TextField(default='')
     keywords = models.CharField(max_length=255, default='')
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    url = models.URLField()
 
