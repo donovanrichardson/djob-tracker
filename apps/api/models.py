@@ -11,7 +11,7 @@ class Job(models.Model):
     title = models.TextField()
     company = models.CharField(max_length=255)
     description = models.TextField(default='')
-    keywords = models.CharField(max_length=255, default='')
+    keywords = models.CharField(max_length=255, null=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     url = models.URLField()
 

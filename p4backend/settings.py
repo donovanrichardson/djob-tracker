@@ -137,6 +137,8 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=2),
 }
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
