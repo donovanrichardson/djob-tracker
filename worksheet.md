@@ -12,6 +12,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
+|Saturday 12| Complete Auth | Complete
+|Sunday 13| Add models | Complete
 |Monday 14| Add user restrictions to backend | Incomplete
 |Friday 18| *Debugging* | Incomplete
 |Weekend (19,20)| Auto generation of keyword using text analysis | Incomplete
@@ -19,7 +21,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Project Description
 
-A Job Tracker app that allows users to login, add jobs listings (including job title, description, URL, and location), and filter by location. The backend handles CRUD, data validation, authorization, and in the post-MVP will auto-generate keywords.
+A Job Tracker app that allows users to login, add jobs listings (including job title, description, URL, and location), and filter by location. The backend is a Django API handles CRUD, data validation, authorization, and in the post-MVP will auto-generate keywords.
 
 ## Time/Priority Matrix 
 
@@ -37,7 +39,9 @@ Time frames are also key in the development cycle.  You have limited time to cod
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|Add Job auth to Job and models|H|4hr| -hr | -hr|
+|Complete Auth|H|5hr| 5hr | -hr|
+|Add models|H|5hr| 5hr | -hr|
+|Add Job restrictions to Job and models|H|4hr| -hr | -hr|
 |Filter Jobs by Location (Backend)|M|1hr| -hr | -hr|
 |Rate Locations|M|1hr| -hr | -hr|
 
@@ -48,7 +52,34 @@ Time frames are also key in the development cycle.  You have limited time to cod
 |Keyword generation based on documents|L|4hr| -hr | -hr|
 
 ## Additional Libraries
+
+django-environ to use environment variables
+
+django-heroku== to connect app to Heroku
+
+djangorestframework the main library to create a REST API using Django
+
+djangorestframework-jwt allows authentication
+
 If I do the auto-generated keyword part of the Post-MVP, I will find a library to do a text analysis on job descriptions.
+
+## Models
+- User
+	- username
+	- email
+	- password
+- Job
+	- title 
+	- company
+	- description 
+	- keywords 
+	- url
+	- location_id 
+	- user_id (incomplete)
+- Location
+	- id 
+	- rating 
+	- user_id (incomplete)
 
 ## Code Snippet
 
