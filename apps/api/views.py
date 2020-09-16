@@ -55,13 +55,13 @@ class JobViewSet(viewsets.ModelViewSet):
         job_instance.company = request.data.get('company', job_instance.company)
         job_instance.url = request.data.get('url', job_instance.url)
         job_instance.keywords = request.data.get('keywords', job_instance.keywords)
-        job_instance.rating=data.get('rating',job_instance.rating)
+        job_instance.rating=request.data.get('rating',job_instance.rating)
         job_instance.save()
         serializer = JobSerializer(job_instance)
         return Response(serializer.data)
 
     def list(self, request, *args, **kwargs):
-        the_jobs = Job.objects.filter(user_id = request.user.id)
+        the_jobs = Job.objects.filter(user_id = request.user.id).order_by("title")
         serialized = JobSerializer(the_jobs, many=True)
         return Response(serialized.data)
 
