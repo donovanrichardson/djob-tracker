@@ -4,7 +4,7 @@ from rest_framework import serializers
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
-        fields = ("id","title", "company","description","keywords","location", "url","user")
+        fields = ("id","title", "company","description","keywords","location", "url","user", "rating")
 
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:

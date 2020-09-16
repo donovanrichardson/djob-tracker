@@ -16,15 +16,19 @@ class JobViewSet(viewsets.ModelViewSet):
         print('*  cre8 iz kawld  *')
         # print(request.data)
         data = request.data
+        print(data)
+        print(data.get('keywords'),'')
         job_inst = Job(
             title = data['title'],
             company = data['company'],
             url = data['url'],
-            keywords = data['keywords'],
+            keywords = data.get('keywords') if data.get('keywords') else '',
             description= data['description'],
+            rating=data.get('rating',0),
             user_id = request.user.id,
         )
-        print(job_inst)
+        # print(job_inst.keywords)
+        # print(job_inst)
 
         try:
             loc_inst = Location.objects.get(pk=data['location_id'])
@@ -51,6 +55,7 @@ class JobViewSet(viewsets.ModelViewSet):
         job_instance.company = request.data.get('company', job_instance.company)
         job_instance.url = request.data.get('url', job_instance.url)
         job_instance.keywords = request.data.get('keywords', job_instance.keywords)
+        job_instance.rating=data.get('rating',job_instance.rating)
         job_instance.save()
         serializer = JobSerializer(job_instance)
         return Response(serializer.data)
