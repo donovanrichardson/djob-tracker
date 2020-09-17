@@ -14,7 +14,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |Saturday 12| Complete Auth | Complete
 |Sunday 13| Add models | Complete
-|Monday 14| Add user restrictions to backend | Incomplete
+|Monday 14| Add user restrictions to backend | Complete
 |Friday 18| *Debugging* | Incomplete
 |Weekend (19,20)| Auto generation of keyword using text analysis | Incomplete
 |Monday 21| Add Sublocations to Location model | Incomplete
@@ -41,9 +41,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 |Complete Auth|H|5hr| 5hr | -hr|
 |Add models|H|5hr| 5hr | -hr|
-|Add Job restrictions to Job and models|H|4hr| -hr | -hr|
+|Add User restrictions to Job and Location|H|4hr| 2hr | -hr|
 |Filter Jobs by Location (Backend)|M|1hr| -hr | -hr|
 |Rate Locations|M|1hr| -hr | -hr|
+|Debugging|M|6hr| 2hr | -hr|
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
