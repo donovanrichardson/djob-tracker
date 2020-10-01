@@ -15,9 +15,111 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Saturday 12| Complete Auth | Complete
 |Sunday 13| Add models | Complete
 |Monday 14| Add user restrictions to backend | Complete
-|Friday 18| *Debugging* | Incomplete
+|Friday 18| *Debugging* | Complete
 |Weekend (19,20)| Auto generation of keyword using text analysis | Incomplete
 |Monday 21| Add Sublocations to Location model | Incomplete
+
+## Models
+- User
+	- username
+	- email
+	- password
+- Job
+	- title 
+	- company
+	- description 
+	- keywords 
+	- url
+	- location_id 
+	- user_id
+- Location
+	- id 
+	- rating 
+	- user_id
+
+## Endpoints
+
+### POST /api/job/
+
+#### requires:
+
+- a request body that includes
+    - **id** ID of the job
+    - **title** title of the job
+    - **company** name of the employer
+    - **description** job description
+    - **url** URL of the job
+
+#### returns:
+- a Job, including:
+    - **id** ID of the job
+    - **title** title of the job
+    - **company** name of the employer
+    - **description** job description
+    - **keywords** for a future feature that will let you search for jobs by keywords
+    - **location** location of the job
+    - **url** URL of the job
+    - **rating** user-given rating for the job
+
+### GET /api/job
+
+#### returns:
+
+- An array of Jobs, having the same fields as the response from the above POST request.
+
+### PATCH /api/job/:id
+
+#### requires:
+
+**id** id of the job
+
+- a request body that includes
+    - **rating** the new rating for the job
+
+#### returns:
+- A Job, having the same fields as the response from the above POST request.
+
+### DELETE /api/job/:id
+
+#### requires:
+
+**id** id of the job
+
+
+#### returns:
+- **message** if the deletion was successful, this message reads "record deleted"
+- **record** the deleted Job, having the same fields as the response from the above POST request.
+
+### GET /api/location
+
+#### returns:
+
+- An array of Locations, having the fields:
+    - **name** the name of the location. This is the primary key, and is referenced in the Job objects.
+    - **rating** the rating of the location.
+
+### PATCH /api/location/:id
+
+#### requires:
+
+**id** id of the location
+
+- a request body that includes
+    - **rating** the new rating for the location
+
+#### returns:
+- A Location, having the same fields as the response from the above GET request.
+
+### DELETE /api/location/:id
+
+#### requires:
+
+**id** id of the location
+
+#### returns:
+- **message** if the deletion was successful, this message reads "record deleted"
+- **record** the deleted Location, having the same fields as the response from the above GET request.
+
 
 ## Project Description
 
@@ -64,23 +166,6 @@ djangorestframework-jwt allows authentication
 
 If I do the auto-generated keyword part of the Post-MVP, I will find a library to do a text analysis on job descriptions.
 
-## Models
-- User
-	- username
-	- email
-	- password
-- Job
-	- title 
-	- company
-	- description 
-	- keywords 
-	- url
-	- location_id 
-	- user_id (incomplete)
-- Location
-	- id 
-	- rating 
-	- user_id (incomplete)
 
 ## Code Snippet
 
